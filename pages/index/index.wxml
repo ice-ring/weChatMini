@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="btn-area">
+    <navigator url="/pages/setting/setting" hover-class="navigator-hover">设置库存</navigator>
+    <navigator url="/pages/outbound/outbound" hover-class="navigator-hover">产品出库</navigator>
+    <navigator url="/pages/inbound/inbound" hover-class="navigator-hover">产品入库</navigator>
+    <!-- <navigator url="/pages/inventoryQuery/inventoryQuery" hover-class="navigator-hover">库存查询</navigator> -->
+  </view>
+</view>

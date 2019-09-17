@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/setting/setting",
+    "pages/outbound/outbound",
+    "pages/inbound/inbound",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/inventoryQuery/inventoryQuery"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "aquamarine",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/setting.png",
+        "iconPath": "images/setting.png",
+        "pagePath": "pages/setting/setting",
+        "text": "库存"
+      },
+      {
+        "selectedIconPath": "images/inbound.png",
+        "iconPath": "images/inbound.png",
+        "pagePath": "pages/inbound/inbound",
+        "text": "产品入库"
+      },
+      {
+        "selectedIconPath": "images/outbound.png",
+        "iconPath": "images/outbound.png",
+        "pagePath": "pages/outbound/outbound",
+        "text": "产品出库"
+      }
+    ]
+  }
+}

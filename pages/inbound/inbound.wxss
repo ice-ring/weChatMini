@@ -1,0 +1,50 @@
+/* pages/inbound/inbound.wxss */
+view{
+  padding: 0 8px;
+}
+.btn-section{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+.btn-item{
+  width: calc(33% - 14px);
+  margin-bottom: 24rpx;
+  border: 1px solid aquamarine;
+  padding: 6px;
+}
+
+.form-cell input{
+  border: 1rpx solid #666666;
+  padding: 4rpx 12rpx;
+  margin: 0 24rpx;
+  height: 46px;
+}
+.form-cell input.disabled{
+  border: none;
+  color: #999999;
+}
+
+.current-container{
+  padding: 24rpx;
+}
+.products-container{
+  margin: 24rpx auto;
+}
+.add-button,.sub-button{
+  margin: 24rpx auto;
+  min-width: 240rpx;
+}
+.del-button{
+  min-width: 250rpx;
+}
+.form-cell{
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
+
+

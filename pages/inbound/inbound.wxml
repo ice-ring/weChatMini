@@ -1,0 +1,19 @@
+<!--pages/inbound/inbound.wxml-->
+<view class="btn-container">
+    <view>选择入库物品</view>
+    <checkbox-group class="btn-section" bindchange="checkboxChange">
+      <view class="btn-item" wx:for="{{products}}" wx:key="index">
+        <checkbox value="{{index}}"/>{{item.name}}  
+      </view>
+    </checkbox-group>
+</view>
+
+
+<view class="current-container forms-container">
+  <view class="form-cell" wx:for="{{inList}}" wx:key="index">
+     <input value="{{item.name}}" disabled="disabled" class="disabled"/>
+    <input maxlength="4" type="digit" placeholder="入库数量" value="{{item.num}}" bindinput="setNum" data-index="{{index}}"/>
+  </view>
+  <button wx-if="{{inList.length>0}}" class="sub-button" type="primary" bindtap="inBound">确定入库</button>
+</view>
+

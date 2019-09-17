@@ -1,0 +1,51 @@
+/* pages/outbound/outbound.wxss */
+view{
+  padding: 8px;
+}
+
+.btn-section{
+  max-height: 320rpx;
+  overflow: auto;
+  background-color: aquamarine;
+}
+
+.btn-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.btn-item view:nth-child(2){
+  flex-grow: 2;
+}
+
+
+.form-cell input{
+  border: 1rpx solid #666666;
+  padding: 4rpx 12rpx;
+  margin: 0 24rpx;
+  height: 46px;
+}
+.form-cell input.disabled{
+  border: none;
+  color: #999999;
+}
+
+.current-container{
+  padding: 24rpx;
+}
+.products-container{
+  margin: 24rpx auto;
+}
+.add-button,.sub-button{
+  margin: 24rpx auto;
+  min-width: 240rpx;
+}
+.del-button{
+  min-width: 250rpx;
+}
+.form-cell{
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
