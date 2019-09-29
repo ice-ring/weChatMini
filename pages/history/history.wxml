@@ -1,0 +1,18 @@
+<!--pages/history/history.wxml-->
+<view class="current-container">
+  <view>交易历史:</view>
+   <checkbox-group class="btn-section" bindchange="checkboxChange">
+      <view class="btn-item" wx:for="{{products}}" wx:key="index">
+        <checkbox value="{{index}}"/>{{item.name}}  
+      </view>
+    </checkbox-group>
+    
+     <view class="products-container">
+      <view class="flex-container">
+        <view>名称</view><view>类型</view><view>交易量</view><view>时间</view>
+      </view>   
+      <view wx:for="{{history}}" wx:key="index" class="flex-container product-item">
+          <view>{{item.name}}</view> <view>{{item.action}}</view> <view>{{item.num}}</view><view>{{item.date}}</view> 
+      </view>
+    </view>
+</view>

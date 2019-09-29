@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/inventoryQuery/inventoryQuery",
     "pages/setting/setting",
     "pages/outbound/outbound",
     "pages/inbound/inbound",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/inventoryQuery/inventoryQuery"
+    "pages/history/history",
+    "pages/logs/logs"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,22 +22,29 @@
     "borderStyle": "black",
     "list": [
       {
+        "selectedIconPath": "images/inventoryQuery.png",
+        "iconPath": "images/inventoryQuery.png",
+        "pagePath": "pages/inventoryQuery/inventoryQuery"
+      },
+      {
         "selectedIconPath": "images/setting.png",
         "iconPath": "images/setting.png",
-        "pagePath": "pages/setting/setting",
-        "text": "库存"
+        "pagePath": "pages/setting/setting"
       },
       {
         "selectedIconPath": "images/inbound.png",
         "iconPath": "images/inbound.png",
-        "pagePath": "pages/inbound/inbound",
-        "text": "产品入库"
+        "pagePath": "pages/inbound/inbound"
       },
       {
         "selectedIconPath": "images/outbound.png",
         "iconPath": "images/outbound.png",
-        "pagePath": "pages/outbound/outbound",
-        "text": "产品出库"
+        "pagePath": "pages/outbound/outbound"
+      },
+      {
+        "selectedIconPath": "images/history.png",
+        "iconPath": "images/history.png",
+        "pagePath": "pages/history/history"
       }
     ]
   }

@@ -1,19 +1,32 @@
 <!--pages/setting/setting.wxml-->
 <view class="current-container">
   <view>已有产品({{products.length}})种:</view>
-  <view class="products-container">
-    <view wx:for="{{products}}" wx:key="index" class="flex-container">
-     <view>{{item.name}}</view> <view>{{item.num}}</view>   
+     <view class="products-container">
+      <view class="flex-container">
+        <view>产品名称</view><view>产品数量</view>
+      </view>   
+      <view wx:for="{{products}}" wx:key="index" class="flex-container">
+          <view>{{item.name}}</view> <view>{{item.num}}</view>   
+      </view>
     </view>
-  </view>
 </view>
 
 <view class="current-container forms-container">
   <button class="add-button" bindtap="addItem">添加产品</button>
+  <view class="form-cell"><view>产品名称</view><view>产品数量</view><view>删除</view></view>
   <view class="form-cell" wx:for="{{settings}}" wx:key="index">
-    <input maxlength="10" placeholder="产品名称" value="{{item.name}}" bindinput="setName" data-index="{{index}}"/>
-    <input maxlength="4" type="digit" placeholder="初始数量" value="{{item.num}}"  bindinput="setNum" data-index="{{index}}"/>
-    <button class="del-button" bindtap="deleteItem" index="index">删除</button>
+    <view>
+      <input maxlength="10" 
+            placeholder="产品名称" value="{{item.name}}" bindinput="setName" data-index="{{index}}"/>
+    </view>
+    <view>
+      <input maxlength="4" type="digit" 
+            placeholder="初始数量" value="{{item.num}}"  bindinput="setNum" data-index="{{index}}"/>
+    </view>
+    <view>
+     <icon class="del-button" 
+      bindtap="deleteItem" index="index" type="clear" size="32" color="{{item}}"/>
+    </view>
   </view>
   <button wx-if="{{settings.length>0}}" class="sub-button" type="primary" bindtap="subItem">确定添加</button>
 </view>

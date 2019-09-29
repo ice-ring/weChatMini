@@ -12,4 +12,5 @@
 
 page{
   height: 100%;
+  color: #262626;
 }

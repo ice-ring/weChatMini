@@ -16,5 +16,5 @@
     <input value="{{item.name}}" disabled="disabled" class="disabled"/>
     <input maxlength="4" type="digit" placeholder="出库数量" value="{{item.num}}" bindinput="setNum" data-index="{{index}}"/>
   </view>
-  <button wx-if="{{outList.length>0}}" class="sub-button" type="primary" bindtap="inBound">确定出库</button>
+  <button wx-if="{{outList.length>0}}" class="sub-button" type="primary" bindtap="outBound">确定出库</button>
 </view>

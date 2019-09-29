@@ -8,6 +8,7 @@ Page({
     errorType:1,
     products:[],
     outList:[],
+    history: [],
     noMoreItem:{
       name:'xxxxx'
     }
@@ -24,14 +25,22 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     try {
-      var value = wx.getStorageSync('store')
+      var value = wx.getStorageSync('store');
+      var history = wx.getStorageSync('history');
       if (value) {
         // Do something with return value
         this.setData({
-          products: value
+          products: value,
+          history: history
         })
-        console.error(value);
       }
     } catch (e) {
       // Do something when catch error
@@ -39,17 +48,12 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({
+      outList: []
+    })
   },
 
   /**
@@ -107,22 +111,35 @@ Page({
     })
   },
 
-  inBound: function () {
+  outBound: function () {
     if (this.validate() &&  this.validateInventory()) {
       var products = this.data.products;
-      this.data.outList.forEach(e => {
+      var outList = this.data.outList;
+      outList.forEach(e => {
         var current = products.find(item => {
           return item.id === e.id;
         });
-        current.num = parseInt(e.num) - parseInt(current.num);
+        current.num = parseInt(current.num) - parseInt(e.num);
+        let historyItem = {
+          key:e.id,
+          name:e.name,
+          action:'出库',
+          num: '-' + e.num,
+          date: Date.now(),
+        }
+        this.data.history.unshift(historyItem);
+        wx.setStorage({
+          key: "history",
+          data: this.data.history
+        });
       });
       wx.setStorage({
         key: "store",
         data: products
-      })
-      wx.redirectTo({
-        url: '/pages/index/index'
-      })
+      });
+      wx.switchTab({
+        url: '/pages/inventoryQuery/inventoryQuery'
+      });
     } else {
       var title = this.data.errorType === 1 ? '物品出库数量未输入' : '物品' + this.data.noMoreItem.name+'输入数值大于库存值';
       wx.showToast({

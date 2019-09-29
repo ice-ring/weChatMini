@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    products:[]
   },
 
   /**
@@ -19,14 +19,24 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    try {
+      var value = wx.getStorageSync('store')
+      if (value) {
+        // Do something with return value
+        this.setData({
+          products: value,
+        })
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
   },
 
   /**
@@ -62,5 +72,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  onItemClick: function(id){
+    wx.switchTab({
+      url: '/pages/history/history?id='+id,
+    })
   }
 })

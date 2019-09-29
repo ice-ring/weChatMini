@@ -10,35 +10,35 @@ view{
   justify-content: space-between;
 }
 .products-container{
-  margin: 12rpx auto;
+  margin: 12rpx 0;
   max-height: 320rpx;
   overflow: scroll;
-  background-color: aquamarine;
+}
+.products-container .flex-container{
+    background-color: #44b549;
 }
 .add-button,.sub-button{
   margin: 24rpx auto;
   min-width: 240rpx;
 }
-.del-button{
-  min-width: 60px;
-  font-size: 50rpx;
-  height: 50px;
-  line-height: 1;
-  padding: 8px;
-}
 .form-cell{
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin-bottom: 16rpx;
 }
 
-.form-cell input{
-  border: 1rpx solid #666666;
-  padding: 4rpx 12rpx;
-  height: 46px;
+.form-cell view{
+  /* border: 1rpx solid #666666; */
+  margin:4px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 
-.form-cell input:nth-child(2){
-  max-width: 120rpx;
-  margin-right: 4rpx;
+.form-cell input{
+  border: 1rpx solid #666666;
+  padding: 4px;
 }

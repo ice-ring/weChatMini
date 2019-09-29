@@ -1,1 +1,27 @@
 /* pages/inventoryQuery/inventoryQuery.wxss */
+view{
+  padding: 8rpx;
+}
+.current-container{
+  padding: 24rpx;
+}
+.flex-container{
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  cursor: pointer;
+
+}
+.products-container{
+  margin: 12rpx 0;
+  overflow: scroll;
+}
+.products-container .flex-container{
+    /* background-color: aquamarine; */
+}
+
+.product-item{
+  border: 1px solid #f8f8f8;
+  background-color: #f8f8f8;
+  margin: 8px;
+}

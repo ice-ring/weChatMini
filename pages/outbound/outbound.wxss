@@ -6,7 +6,7 @@ view{
 .btn-section{
   max-height: 320rpx;
   overflow: auto;
-  background-color: aquamarine;
+  background-color: #44b549;
 }
 
 .btn-item{

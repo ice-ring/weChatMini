@@ -7,6 +7,7 @@ Page({
   data: {
     products: [],
     inList: [],
+    history: [],
   },
 
   /**
@@ -20,12 +21,21 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     try {
-      var value = wx.getStorageSync('store')
+      var value = wx.getStorageSync('store');
+      var history = wx.getStorageSync('history');
       if (value) {
         // Do something with return value
         this.setData({
-          products: value
+          products: value,
+          history: history
         })
       }
     } catch (e) {
@@ -34,17 +44,12 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({
+      inList:[]
+    })
   },
 
   /**
@@ -110,14 +115,26 @@ Page({
           return item.id === e.id;
         });
         current.num = parseInt(current.num) + parseInt(e.num);
+        let historyItem = {
+          key: e.id,
+          name: e.name,
+          action: '入库',
+          num: '+' + e.num,
+          date: Date.now(),
+        }
+        this.data.history.unshift(historyItem);
+        wx.setStorage({
+          key: "history",
+          data: this.data.history
+        });
       });
       wx.setStorage({
         key: "store",
         data: products
       })
-      wx.redirectTo({
-        url: '/pages/index/index'
-      })  
+      wx.switchTab({
+        url: '/pages/inventoryQuery/inventoryQuery'
+      });
     }else{
       wx.showToast({
         title: '物品入库数量未输入',
