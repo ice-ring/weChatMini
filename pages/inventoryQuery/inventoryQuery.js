@@ -78,5 +78,17 @@ Page({
     wx.switchTab({
       url: '/pages/history/history?id='+id,
     })
-  }
+  },
+
+  deleteItem:function(e){
+    var index = parseInt(e.currentTarget.dataset.index);
+    this.data.products.splice(index,1);
+    this.setData({
+        products: this.data.products,
+    });
+    wx.setStorage({
+      key: "store",
+      data: this.data.products
+    })
+  },
 })

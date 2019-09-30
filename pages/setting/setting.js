@@ -153,7 +153,7 @@ Page({
   validate:function(){
     var settings = this.data.settings;
     var result = settings.find(e=>{
-      return e.name === '';
+      return e.name === '' || e.num === '';
     });
     if(result){
       return false;

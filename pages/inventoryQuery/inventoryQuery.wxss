@@ -8,7 +8,6 @@ view{
 .flex-container{
   display: flex;
   justify-content: space-between;
-  height: 48px;
   cursor: pointer;
 
 }
@@ -24,4 +23,6 @@ view{
   border: 1px solid #f8f8f8;
   background-color: #f8f8f8;
   margin: 8px;
+  height: 50px;
+  line-height: 50px;
 }
